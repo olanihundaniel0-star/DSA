@@ -1,0 +1,21 @@
+"""
+You are climbing a staircase. It takes n steps to reach the top.
+
+Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?
+"""
+
+class Solution:
+    def climbStairs(self, n: int) -> int:
+        memo = {}
+        
+        def climb(n):  # initialise base cases 
+            if n == 1:
+                return 1
+            if n == 2:
+                return 2
+            if n in memo: # for loop for dict 
+                return memo[n] # head recursion
+            memo[n] = climb(n - 1) + climb(n - 2) # fibonnaci algorithm
+            return memo[n]  
+        
+        return climb(n)
