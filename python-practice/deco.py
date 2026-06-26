@@ -5,14 +5,12 @@ def check_log(func):
         return func(a,b)
     return wrap
 
-
 def is_greater(func):
     def wrap(a,b):
         if a > b:
             a , b = b , a
         return func(a,b)
     return wrap
-
 
 @check_log
 @is_greater

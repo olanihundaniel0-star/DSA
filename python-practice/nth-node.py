@@ -10,7 +10,7 @@ def removeNthFromEnd(head, n):
     back = dummy
 
     for i in range(n + 1):
-        front = front.next
+        front = front.n
     while front is not None:
         front = front.next
         back = back.next
